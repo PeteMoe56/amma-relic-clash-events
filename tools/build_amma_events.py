@@ -29,9 +29,11 @@ WIX_MEDIA = "https://static.wixstatic.com/media/"
 #     <img src="https://static.wixstatic.com/media/<id>~mv2.jpg/v1/fill/.../file.jpg" alt="...">
 # We capture the ticket href, the wix media id, and the original extension.
 LINKED_IMG = re.compile(
-    r'<a[^>]+href="([^"]+)"[^>]*>\s*<img[^>]+src="'
+    r'<a[^>]+href="([^"]+)"[^>]*>'
+    r'(?:(?!</a>).)*?'
+    r'<img[^>]+src="'
     r'https://static\.wixstatic\.com/media/([0-9a-zA-Z_]+~mv2\.(?:jpg|jpeg|png|webp))',
-    re.IGNORECASE,
+    re.IGNORECASE | re.DOTALL,
 )
 NEXT_STOP = re.compile(r'NEXT STOP:\s*([^<]+?)\s*</', re.IGNORECASE)
 NEXT_DATE = re.compile(r'(SATURDAY|SUNDAY|FRIDAY|MONDAY|TUESDAY|WEDNESDAY|THURSDAY)\s+[A-Z]+\s+\d{1,2}\s*(?:TH|ST|ND|RD)?', re.IGNORECASE)
@@ -101,7 +103,8 @@ def main():
     html = open(args.html, encoding="utf-8").read() if args.html else fetch(SITE)
     data = build(html, args.max)
     if not data["events"]:
-        print("WARNING: no events parsed - site layout may have changed.", file=sys.stderr)
+        print("ERROR: no events parsed - site layout may have changed; refusing to overwrite.", file=sys.stderr)
+        sys.exit(1)
     with open(args.out, "w", encoding="utf-8") as f:
         json.dump(data, f, indent=2, ensure_ascii=False)
     print("Wrote %s (%d events)" % (args.out, len(data["events"])))
