@@ -24,19 +24,24 @@ from urllib.request import Request, urlopen
 SITE = "https://www.armoredmma.com/"
 WIX_MEDIA = "https://static.wixstatic.com/media/"
 
-# An anchor in NEXT SHOWS looks like:
-#   <a href="https://armoredmmaxp.com/portland/">
-#     <img src="https://static.wixstatic.com/media/<id>~mv2.jpg/v1/fill/.../file.jpg" alt="...">
-# We capture the ticket href, the wix media id, and the original extension.
-LINKED_IMG = re.compile(
-    r'<a[^>]+href="([^"]+)"[^>]*>'
-    r'(?:(?!</a>).)*?'
-    r'<img[^>]+src="'
-    r'https://static\.wixstatic\.com/media/([0-9a-zA-Z_]+~mv2\.(?:jpg|jpeg|png|webp))',
-    re.IGNORECASE | re.DOTALL,
-)
-NEXT_STOP = re.compile(r'NEXT STOP:\s*([^<]+?)\s*</', re.IGNORECASE)
+# An anchor in NEXT SHOWS wraps the poster image and links to the ticket page. We pull the
+# whole anchor (href + inner HTML) so we can read both the Wix media id AND the <img alt="...">,
+# which usually carries "City, ST" (e.g. alt="Event-Photos-Pittsburgh,-PA-REV.png").
+ANCHOR = re.compile(r'<a[^>]+href="([^"]+)"[^>]*>((?:(?!</a>)[\s\S])*?)</a>', re.IGNORECASE)
+MEDIA = re.compile(r'src="https://static\.wixstatic\.com/media/([0-9a-zA-Z_]+~mv2\.(?:jpg|jpeg|png|webp))', re.IGNORECASE)
+ALT = re.compile(r'alt="([^"]*)"', re.IGNORECASE)
+ALT_CITY = re.compile(r'Event[-_ ]?Photos[-_ ]([A-Za-z .\'-]+?)[,\-\s]+([A-Z]{2})\b', re.IGNORECASE)
+# "NEXT STOP:" then the first "City, ST" within a short window, even across tags.
+NEXT_STOP_CITY = re.compile(r'NEXT STOP:[\s\S]{0,300}?([A-Z][A-Za-z .]+,\s*[A-Z]{2})', re.IGNORECASE)
 NEXT_DATE = re.compile(r'(SATURDAY|SUNDAY|FRIDAY|MONDAY|TUESDAY|WEDNESDAY|THURSDAY)\s+[A-Z]+\s+\d{1,2}\s*(?:TH|ST|ND|RD)?', re.IGNORECASE)
+
+def city_from_alt(alt):
+    m = ALT_CITY.search(alt or "")
+    if not m:
+        return ""
+    city = re.sub(r'[-_]+', ' ', m.group(1)).strip().title()
+    return "%s, %s" % (city, m.group(2).upper())
+
 
 def fetch(url):
     req = Request(url, headers={"User-Agent": "Mozilla/5.0 (AMMA-feed-bot)"})
@@ -57,18 +62,24 @@ def title_from_ticket(href):
 def build(html, max_events):
     events = []
     seen = set()
-    for href, media in LINKED_IMG.findall(html):
+    for href, inner in ANCHOR.findall(html):
         href = href.strip()
-        if not href or media in seen:
+        msrc = MEDIA.search(inner)
+        if not href or not msrc:
+            continue
+        media = msrc.group(1)
+        if media in seen:
             continue
         # Only keep real event ticket links (skip social/menu links).
         if not (href.startswith("http") and ("armoredmmaxp.com" in href or "feverup.com" in href or "/events" in href)):
             continue
         seen.add(media)
+        malt = ALT.search(inner)
+        city = city_from_alt(malt.group(1) if malt else "") or title_from_ticket(href)
         events.append({
-            "title": title_from_ticket(href),
+            "title": city,
             "subtitle": "",
-            "city": title_from_ticket(href),
+            "city": city,
             "date": "",
             "image_url": raw_media_url(media),
             "ticket_url": href,
@@ -77,13 +88,20 @@ def build(html, max_events):
             break
 
     up_next = {}
-    m = NEXT_STOP.search(html)
-    if m:
+    mc = NEXT_STOP_CITY.search(html)
+    if mc:
         up_next["headline"] = "NEXT STOP"
-        up_next["city"] = m.group(1).strip()
-    d = NEXT_DATE.search(html)
-    if d:
-        up_next["date"] = d.group(0).strip()
+        up_next["city"] = mc.group(1).strip()
+    md = NEXT_DATE.search(html)
+    if md:
+        up_next["date"] = md.group(0).strip()
+
+    # The lead poster's alt sometimes lacks a state; backfill its "City, ST" from NEXT STOP.
+    if events and "," not in events[0]["city"] and up_next.get("city"):
+        parts = up_next["city"].split(",")
+        nice = (parts[0].strip().title() + ", " + parts[1].strip().upper()) if len(parts) == 2 else up_next["city"].strip().title()
+        events[0]["city"] = nice
+        events[0]["title"] = nice
 
     return {
         "enabled": True,
@@ -92,6 +110,7 @@ def build(html, max_events):
         "up_next": up_next,
         "events": events,
     }
+
 
 def main():
     ap = argparse.ArgumentParser()
