@@ -1,34 +1,32 @@
 {
   "enabled": true,
   "updated": "2026-06-20",
-  "source": "bundled-defaults",
+  "source": "armoredmma.com/NEXT-SHOWS",
   "up_next": {
-    "headline": "NEXT STOP",
-    "city": "PORTLAND, OR",
-    "date": "SATURDAY JUNE 27"
+    "date": "SATURDAY JUNE 27 TH"
   },
   "events": [
     {
-      "title": "Portland, OR",
-      "subtitle": "Sat June 27 · Viking Pavilion",
-      "city": "Portland, OR",
-      "date": "June 27",
+      "title": "Portland",
+      "subtitle": "",
+      "city": "Portland",
+      "date": "",
       "image_url": "https://static.wixstatic.com/media/60319d_1375425abc5c434b9d8697857ec1328a~mv2.jpg",
       "ticket_url": "https://armoredmmaxp.com/portland/"
     },
     {
-      "title": "Pittsburgh, PA",
-      "subtitle": "Sat July 18 · 7PM EST · Sunny Day Arena",
-      "city": "Pittsburgh, PA",
-      "date": "July 18",
+      "title": "Pittsburgh",
+      "subtitle": "",
+      "city": "Pittsburgh",
+      "date": "",
       "image_url": "https://static.wixstatic.com/media/60319d_7851d6c8eed1444bb8317fb3daf50a10~mv2.png",
       "ticket_url": "https://armoredmmaxp.com/pittsburgh/"
     },
     {
-      "title": "Detroit, MI",
-      "subtitle": "Sat July 25 · 7PM EST · Wayne State Fieldhouse",
-      "city": "Detroit, MI",
-      "date": "July 25",
+      "title": "Detroit",
+      "subtitle": "",
+      "city": "Detroit",
+      "date": "",
       "image_url": "https://static.wixstatic.com/media/60319d_d476bafd23eb4e4ebea0755d6e013a81~mv2.png",
       "ticket_url": "https://armoredmmaxp.com/detroit/"
     }
