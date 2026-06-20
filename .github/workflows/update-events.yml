@@ -1,0 +1,31 @@
+name: Update AMMA events
+
+on:
+  schedule:
+    - cron: "0 14 * * 1"   # every Monday 14:00 UTC (~9-10am US)
+  workflow_dispatch:        # lets you run it manually from the Actions tab
+
+permissions:
+  contents: write
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.x"
+      - name: Build manifest from armoredmma.com
+        run: python tools/build_amma_events.py -o amma_events.json --max 3
+      - name: Commit if changed
+        run: |
+          if git diff --quiet -- amma_events.json; then
+            echo "No changes this run."
+          else
+            git config user.name  "amma-events-bot"
+            git config user.email "amma-events-bot@users.noreply.github.com"
+            git add amma_events.json
+            git commit -m "Auto-update AMMA events ($(date -u +%F))"
+            git push
+          fi
