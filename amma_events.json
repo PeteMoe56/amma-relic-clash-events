@@ -1,6 +1,6 @@
 {
   "enabled": true,
-  "updated": "2026-06-20",
+  "updated": "2026-06-22",
   "source": "armoredmma.com/NEXT-SHOWS",
   "up_next": {
     "headline": "NEXT STOP",
@@ -13,7 +13,7 @@
       "subtitle": "",
       "city": "Portland, OR",
       "date": "",
-      "image_url": "https://static.wixstatic.com/media/60319d_1375425abc5c434b9d8697857ec1328a~mv2.jpg",
+      "image_url": "https://static.wixstatic.com/media/60319d_8b9c306001c5439b933a7b68c84fdd8f~mv2.jpg",
       "ticket_url": "https://armoredmmaxp.com/portland/"
     },
     {
@@ -21,7 +21,7 @@
       "subtitle": "",
       "city": "Pittsburgh, PA",
       "date": "",
-      "image_url": "https://static.wixstatic.com/media/60319d_7851d6c8eed1444bb8317fb3daf50a10~mv2.png",
+      "image_url": "https://static.wixstatic.com/media/60319d_8507cc76b64f43a3a7574b28d98413ea~mv2.jpg",
       "ticket_url": "https://armoredmmaxp.com/pittsburgh/"
     },
     {
@@ -29,7 +29,7 @@
       "subtitle": "",
       "city": "Detroit, MI",
       "date": "",
-      "image_url": "https://static.wixstatic.com/media/60319d_d476bafd23eb4e4ebea0755d6e013a81~mv2.png",
+      "image_url": "https://static.wixstatic.com/media/60319d_fe9199b029984322a759342ef9e8bdfb~mv2.png",
       "ticket_url": "https://armoredmmaxp.com/detroit/"
     }
   ]
