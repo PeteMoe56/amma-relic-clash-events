@@ -1,21 +1,13 @@
 {
   "enabled": true,
-  "updated": "2026-06-29",
+  "updated": "2026-07-06",
   "source": "armoredmma.com/NEXT-SHOWS",
   "up_next": {
     "headline": "NEXT STOP",
-    "city": "PORTLAND, OR",
-    "date": "SATURDAY JUNE 27 TH"
+    "city": "PITTSBURGH, PA",
+    "date": "SATURDAY JULY 18TH"
   },
   "events": [
-    {
-      "title": "Portland, OR",
-      "subtitle": "",
-      "city": "Portland, OR",
-      "date": "",
-      "image_url": "https://static.wixstatic.com/media/60319d_8b9c306001c5439b933a7b68c84fdd8f~mv2.jpg",
-      "ticket_url": "https://armoredmmaxp.com/portland/"
-    },
     {
       "title": "Pittsburgh, PA",
       "subtitle": "",
@@ -31,6 +23,14 @@
       "date": "",
       "image_url": "https://static.wixstatic.com/media/60319d_fe9199b029984322a759342ef9e8bdfb~mv2.png",
       "ticket_url": "https://armoredmmaxp.com/detroit/"
+    },
+    {
+      "title": "Bloomington, IL",
+      "subtitle": "",
+      "city": "Bloomington, IL",
+      "date": "",
+      "image_url": "https://static.wixstatic.com/media/60319d_65d608c92477411e93455058be40ed75~mv2.png",
+      "ticket_url": "https://www.grossingermotorsarena.com/events-and-tickets/calendar/event/2026/08/15/armored-mma-medieval-cage-fighting"
     }
   ]
 }
