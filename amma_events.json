@@ -1,21 +1,11 @@
 {
   "enabled": true,
-  "updated": "2026-07-20",
+  "updated": "2026-07-27",
   "source": "armoredmma.com/NEXT-SHOWS",
   "up_next": {
-    "headline": "NEXT STOP",
-    "city": "PITTSBURGH, PA",
-    "date": "SATURDAY JULY 18TH"
+    "date": "SATURDAY JULY 25TH"
   },
   "events": [
-    {
-      "title": "Pittsburgh, PA",
-      "subtitle": "",
-      "city": "Pittsburgh, PA",
-      "date": "",
-      "image_url": "https://static.wixstatic.com/media/60319d_8507cc76b64f43a3a7574b28d98413ea~mv2.jpg",
-      "ticket_url": "https://armoredmmaxp.com/pittsburgh/"
-    },
     {
       "title": "Detroit, MI",
       "subtitle": "",
@@ -31,6 +21,14 @@
       "date": "",
       "image_url": "https://static.wixstatic.com/media/60319d_65d608c92477411e93455058be40ed75~mv2.png",
       "ticket_url": "https://www.grossingermotorsarena.com/events-and-tickets/calendar/event/2026/08/15/armored-mma-medieval-cage-fighting"
+    },
+    {
+      "title": "Omaha, NE",
+      "subtitle": "",
+      "city": "Omaha, NE",
+      "date": "",
+      "image_url": "https://static.wixstatic.com/media/60319d_42784cdc60a14531a09dbbcbf2820aa2~mv2.png",
+      "ticket_url": "https://www.libertyfirstcreditunionarena.com/events/detail/armored-mma"
     }
   ]
 }
