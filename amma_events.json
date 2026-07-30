@@ -1,6 +1,6 @@
 {
   "enabled": true,
-  "updated": "2026-07-27",
+  "updated": "2026-07-30",
   "source": "armoredmma.com/NEXT-SHOWS",
   "up_next": {
     "date": "SATURDAY JULY 25TH"
@@ -29,6 +29,30 @@
       "date": "",
       "image_url": "https://static.wixstatic.com/media/60319d_42784cdc60a14531a09dbbcbf2820aa2~mv2.png",
       "ticket_url": "https://www.libertyfirstcreditunionarena.com/events/detail/armored-mma"
+    },
+    {
+      "title": "San Antonio, TX",
+      "subtitle": "",
+      "city": "San Antonio, TX",
+      "date": "",
+      "image_url": "https://static.wixstatic.com/media/60319d_8c38153d7a534305a3a475ac06a4a2dd~mv2.jpg",
+      "ticket_url": "https://armoredmmaxp.com/san-antonio/"
+    },
+    {
+      "title": "Hammond, IN",
+      "subtitle": "",
+      "city": "Hammond, IN",
+      "date": "",
+      "image_url": "https://static.wixstatic.com/media/60319d_c0de9194767d4048b62a78df1c787c2d~mv2.jpg",
+      "ticket_url": "https://feverup.com/m/663734"
+    },
+    {
+      "title": "Owensboro, KY",
+      "subtitle": "",
+      "city": "Owensboro, KY",
+      "date": "",
+      "image_url": "https://static.wixstatic.com/media/60319d_23c319fadb124a66b07f7280bfc91f5a~mv2.png",
+      "ticket_url": "https://feverup.com/m/657752"
     }
   ]
 }
