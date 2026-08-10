@@ -1,19 +1,11 @@
 {
   "enabled": true,
-  "updated": "2026-08-03",
+  "updated": "2026-08-10",
   "source": "armoredmma.com/NEXT-SHOWS",
   "up_next": {
-    "date": "SATURDAY JULY 25TH"
+    "date": "SATURDAY AUG 15TH"
   },
   "events": [
-    {
-      "title": "Detroit, MI",
-      "subtitle": "",
-      "city": "Detroit, MI",
-      "date": "",
-      "image_url": "https://static.wixstatic.com/media/60319d_fe9199b029984322a759342ef9e8bdfb~mv2.png",
-      "ticket_url": "https://armoredmmaxp.com/detroit/"
-    },
     {
       "title": "Bloomington, IL",
       "subtitle": "",
@@ -53,6 +45,14 @@
       "date": "",
       "image_url": "https://static.wixstatic.com/media/60319d_23c319fadb124a66b07f7280bfc91f5a~mv2.png",
       "ticket_url": "https://feverup.com/m/657752"
+    },
+    {
+      "title": "Nasvhille, TN",
+      "subtitle": "",
+      "city": "Nasvhille, TN",
+      "date": "",
+      "image_url": "https://static.wixstatic.com/media/60319d_2c643802cb714e53b76bf98269fbf739~mv2.jpg",
+      "ticket_url": "https://armoredmmaxp.com/nashville/"
     }
   ]
 }
