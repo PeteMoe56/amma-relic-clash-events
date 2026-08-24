@@ -1,19 +1,13 @@
 {
   "enabled": true,
-  "updated": "2026-08-17",
+  "updated": "2026-08-24",
   "source": "armoredmma.com/NEXT-SHOWS",
   "up_next": {
-    "date": "SATURDAY AUG 15TH"
+    "headline": "NEXT STOP",
+    "city": "OMAHA, NE",
+    "date": "SATURDAY AUG 29TH"
   },
   "events": [
-    {
-      "title": "Bloomington, IL",
-      "subtitle": "",
-      "city": "Bloomington, IL",
-      "date": "",
-      "image_url": "https://static.wixstatic.com/media/60319d_65d608c92477411e93455058be40ed75~mv2.png",
-      "ticket_url": "https://www.grossingermotorsarena.com/events-and-tickets/calendar/event/2026/08/15/armored-mma-medieval-cage-fighting"
-    },
     {
       "title": "Omaha, NE",
       "subtitle": "",
