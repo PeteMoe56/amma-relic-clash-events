@@ -1,21 +1,13 @@
 {
   "enabled": true,
-  "updated": "2026-08-31",
+  "updated": "2026-09-07",
   "source": "armoredmma.com/NEXT-SHOWS",
   "up_next": {
     "headline": "NEXT STOP",
-    "city": "OMAHA, NE",
-    "date": "SATURDAY AUG 29TH"
+    "city": "SAN ANTONIO, TX",
+    "date": "SATURDAY SEPT 19TH"
   },
   "events": [
-    {
-      "title": "Omaha, NE",
-      "subtitle": "",
-      "city": "Omaha, NE",
-      "date": "",
-      "image_url": "https://static.wixstatic.com/media/60319d_42784cdc60a14531a09dbbcbf2820aa2~mv2.png",
-      "ticket_url": "https://www.libertyfirstcreditunionarena.com/events/detail/armored-mma"
-    },
     {
       "title": "San Antonio, TX",
       "subtitle": "",
@@ -45,8 +37,8 @@
       "subtitle": "",
       "city": "Nasvhille, TN",
       "date": "",
-      "image_url": "https://static.wixstatic.com/media/60319d_2c643802cb714e53b76bf98269fbf739~mv2.jpg",
-      "ticket_url": "https://armoredmmaxp.com/nashville/"
+      "image_url": "https://static.wixstatic.com/media/60319d_814fa3b0c32a4fe39c942ea52dd3841c~mv2.jpg",
+      "ticket_url": "https://feverup.com/m/664607"
     }
   ]
 }
