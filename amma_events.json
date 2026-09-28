@@ -1,21 +1,13 @@
 {
   "enabled": true,
-  "updated": "2026-09-21",
+  "updated": "2026-09-28",
   "source": "armoredmma.com/NEXT-SHOWS",
   "up_next": {
     "headline": "NEXT STOP",
-    "city": "SAN ANTONIO, TX",
-    "date": "SATURDAY SEPT 19TH"
+    "city": "HAMMOND, IN",
+    "date": "SATURDAY SEPT 26TH"
   },
   "events": [
-    {
-      "title": "San Antonio, TX",
-      "subtitle": "",
-      "city": "San Antonio, TX",
-      "date": "",
-      "image_url": "https://static.wixstatic.com/media/60319d_8c38153d7a534305a3a475ac06a4a2dd~mv2.jpg",
-      "ticket_url": "https://armoredmmaxp.com/san-antonio/"
-    },
     {
       "title": "Hammond, IN",
       "subtitle": "",
@@ -29,7 +21,7 @@
       "subtitle": "",
       "city": "Owensboro, KY",
       "date": "",
-      "image_url": "https://static.wixstatic.com/media/60319d_9f755354fed24dc6a41ef44d31c13485~mv2.png",
+      "image_url": "https://static.wixstatic.com/media/60319d_806f05c565e54734bb94fa862df1dbc5~mv2.png",
       "ticket_url": "https://feverup.com/m/657752"
     },
     {
