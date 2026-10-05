@@ -1,21 +1,13 @@
 {
   "enabled": true,
-  "updated": "2026-09-28",
+  "updated": "2026-10-05",
   "source": "armoredmma.com/NEXT-SHOWS",
   "up_next": {
     "headline": "NEXT STOP",
-    "city": "HAMMOND, IN",
-    "date": "SATURDAY SEPT 26TH"
+    "city": "SIOUX FALLS, SD",
+    "date": "SATURDAY OCT 3RD"
   },
   "events": [
-    {
-      "title": "Hammond, IN",
-      "subtitle": "",
-      "city": "Hammond, IN",
-      "date": "",
-      "image_url": "https://static.wixstatic.com/media/60319d_ed8fa3a1c5e54cdc82f686eb725045a5~mv2.jpg",
-      "ticket_url": "https://feverup.com/m/663734"
-    },
     {
       "title": "Owensboro, KY",
       "subtitle": "",
